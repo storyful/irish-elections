@@ -48,3 +48,10 @@ end
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
 end
+
+gem 'capistrano', '~> 3.4.0'
+gem 'capistrano-rails'
+gem 'capistrano-passenger'
+gem 'capistrano-rvm'
+gem 'capistrano-bundler'
+
