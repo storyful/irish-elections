@@ -35,6 +35,33 @@ ActiveAdmin.register Candidate do
     f.actions
   end
 
+  show as: :grid do |c|
+    attributes_table do
+      row :image do
+        link_to image_tag(c.photo_url, height: 128, width: 128), c.photo_url, target: '_blank'
+      end
+
+      row :first_name
+      row :last_name
+      row :aka
+      row :date_of_birth
+      row :gender
+      row :photo_url
+      row :party_profile_url
+      row :website_url
+      row :twitter_url
+      row :facebook_url
+      row :instagram_url
+      row :linkedin_url
+      row :youtube_url
+      row :source_url
+      row :voting_record_url
+      row :claimed_expenses
+      row :constituency
+      row :party
+    end
+  end
+
   index do
     column "Image" do |c|
       link_to image_tag(c.photo_url, height: 24, width: 24), c.photo_url, target: '_blank'
