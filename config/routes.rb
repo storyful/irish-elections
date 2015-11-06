@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   root 'site#home'
   get 'test' => 'site#candidates_csv'
 
-  resources :parties, only: [:index]
-  resources :candidates, only: [:index]
+  resources :parties, only: [:index, :show]
+  resources :candidates, only: [:index, :show]
 end
