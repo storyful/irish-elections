@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   end
   resources :constituencies, only: [:index, :show] do
     resources :parties, only: [:index, :show]
+    resources :candidates, only: [:index, :show]
   end
   resources :candidates, only: [:index, :show]
 end
