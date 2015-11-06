@@ -7,10 +7,10 @@ class Party < ActiveRecord::Base
 
   api_accessible :default do |template|
     template.add :name
-    template.add :url
+    template.add :path
   end
 
-  def url
-    "/parties/#{slug}.json"
+  def path
+    "/parties/#{slug}"
   end
 end

@@ -4,7 +4,7 @@ class PartiesController < ApplicationController
     respond_to do |format|
       @parties = Party.all
       format.html
-      format.json { render_for_api :default, xml: @parties }
+      format.json { render_for_api :default, json: @parties }
       format.xml  { render_for_api :default, xml: @parties }
     end
   end
