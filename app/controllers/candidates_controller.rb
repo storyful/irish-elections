@@ -1,6 +1,8 @@
 class CandidatesController < ApplicationController
   api :GET, '/candidates'
 
+  caches_action :index, cache_path: Proc.new {|c| c.request.url }, expires_in: 1.hour
+
   def index
     @candidates = candidates
     respond_to do |format|
