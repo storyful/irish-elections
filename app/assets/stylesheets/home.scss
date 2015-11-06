@@ -1,0 +1,17 @@
+@import 'shared';
+
+// .home-wrap {
+//   width: 1200px;
+//   background-color: $orange;
+//   display: inline-block;
+//   margin-left: -100px;
+// }
+//
+.home-container {
+  background-color: $orange;
+  display: inline-block;
+  color: white;
+  a {
+    color: white;
+  }
+}
