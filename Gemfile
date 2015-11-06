@@ -25,6 +25,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use friendly_id for slugs
 gem 'friendly_id', '~> 5.1.0'
 
+gem 'acts_as_api'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -65,4 +67,4 @@ gem 'apipie-rails'
 gem 'devise'
 gem 'activeadmin', github: 'activeadmin'
 gem 'haml-rails', '~> 0.9'
-gem "twitter-bootstrap-rails"
+gem 'twitter-bootstrap-rails'
