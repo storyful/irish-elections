@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151106110927) do
+ActiveRecord::Schema.define(version: 20151106121528) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -69,11 +69,14 @@ ActiveRecord::Schema.define(version: 20151106110927) do
     t.decimal  "claimed_expenses",  precision: 9, scale: 2
     t.datetime "created_at",                                                null: false
     t.datetime "updated_at",                                                null: false
+    t.integer  "party_id"
+    t.integer  "constituency_id"
   end
 
   create_table "constituencies", force: :cascade do |t|
-    t.string "name", null: false
-    t.string "slug"
+    t.string  "name",                  null: false
+    t.string  "slug"
+    t.integer "num_seats", default: 0, null: false
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
@@ -90,7 +93,8 @@ ActiveRecord::Schema.define(version: 20151106110927) do
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
 
   create_table "parties", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
+    t.string "slug"
   end
 
 end

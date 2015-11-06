@@ -112,6 +112,7 @@ ActiveAdmin.setup do |config|
   # roots for each namespace.
   #
   # Default:
+  config.root_to = 'candidates#index'
   # config.root_to = 'dashboard#index'
 
   # == Admin Comments

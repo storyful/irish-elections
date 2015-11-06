@@ -49,6 +49,11 @@ group :development, :test do
   gem 'byebug'
 end
 
+group :test do
+  gem 'guard-rspec'
+  gem 'guard-rails'
+end
+
 gem 'capistrano', '~> 3.4.0'
 gem 'capistrano-rails'
 gem 'capistrano-passenger'
@@ -57,3 +62,4 @@ gem 'capistrano-bundler'
 gem 'apipie-rails'
 gem 'devise'
 gem 'activeadmin', github: 'activeadmin'
+gem 'haml-rails', '~> 0.9'
