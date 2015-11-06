@@ -13,6 +13,6 @@ constituencies = CSV.foreach("#{Rails.root}/db/data/constituencies.csv").map { |
 
 Constituency.create constituencies
 
-['Fianna Fàil', 'Fine Gael', 'Labour Party', 'Sinn Féin', 'Renua', 'Green Party', 'Social Democrats', 'The Socialist Party', 'The Workers\' Party', 'Communist Party of Ireland', 'Stop the Water Tax - Socialist', 'Independent'].each do |party|
+['Fianna Fáil', 'Fine Gael', 'Labour Party', 'Sinn Féin', 'Renua', 'Green Party', 'Social Democrats', 'The Socialist Party', 'The Workers\' Party', 'Communist Party of Ireland', 'Stop the Water Tax - Socialist', 'Independent'].each do |party|
   Party.create(name: party)
 end
