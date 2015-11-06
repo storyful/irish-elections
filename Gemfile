@@ -40,18 +40,20 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
-  gem 'rubocop'
-  gem 'rubocop-rspec'
 end
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
   gem 'byebug'
+  gem 'rubocop'
+  gem 'rubocop-rspec'
 end
 
 group :test do
   gem 'guard-rspec'
   gem 'guard-rails'
+  gem 'rspec-json_expectations'
+  gem 'factory_girl_rails'
 end
 
 gem 'capistrano', '~> 3.4.0'
