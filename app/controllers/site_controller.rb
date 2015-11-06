@@ -3,6 +3,9 @@ class SiteController < ApplicationController
 
   end
 
+  def about
+  end
+
   def candidates_csv
     @candidates = Candidate.all
     respond_to do |format|
