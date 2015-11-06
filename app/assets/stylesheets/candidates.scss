@@ -1,3 +1,5 @@
+@import 'shared';
+
 .candidate-pic {
   float: left;
   img {
@@ -7,4 +9,10 @@
 }
 .candidate-info {
   float: left;
+}
+.single-candidate {
+  h1 {
+    font-size: 28px;
+    color: $orange;
+  }
 }
