@@ -1,0 +1,18 @@
+<div class="col-xs-12 condidates-header">
+  <select>
+    <option value="Holder">Holder</option>
+  </select>
+</div>
+<div class="col-xs-12 container">
+  <% @candidates.each do |candidate| %>
+    <div class="col-lg-4">
+      <div class="candidate-pic">
+        <img src="<%= candidate.photo_url %>">
+      </div>
+      <div class="candidate-info">
+        <h5><%= candidate.first_name %> <%= candidate.last_name %></h5>
+        <p><%= candidate.constituency.try(:name) %></p>
+      </div>
+    </div>
+  <% end %>
+</div>
