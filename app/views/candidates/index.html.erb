@@ -3,7 +3,7 @@
 </div>
 <div class="col-xs-12 container">
   <% @candidates.each do |candidate| %>
-    <div class="col-md-4">
+    <a class="col-md-4" href="/candidates/<%= candidate.slug %>">
       <div class="candidate-pic">
         <img src="<%= candidate.photo_url %>">
       </div>
@@ -11,6 +11,6 @@
         <h5><%= candidate.first_name %> <%= candidate.last_name %></h5>
         <p><%= candidate.constituency.try(:name) %></p>
       </div>
-    </div>
+    </a>
   <% end %>
 </div>

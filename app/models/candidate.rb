@@ -74,4 +74,9 @@ class Candidate < ActiveRecord::Base
   def path
     "/candidates/#{slug}"
   end
+
+  def position
+    return 'Councillor' if current_councillor
+    return 'Senator' if current_senator
+  end
 end

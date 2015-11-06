@@ -1,11 +1,9 @@
-// Place all the styles related to the site controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
 @import 'shared';
 
 body {
   width: 1200px;
   margin: auto;
+  background-color: $grey-white;
 }
 .main-container {
   width: 980px;
