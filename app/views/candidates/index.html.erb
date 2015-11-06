@@ -3,7 +3,7 @@
 </div>
 <div class="col-xs-12 container">
   <% @candidates.each do |candidate| %>
-    <a class="col-md-4" href="/candidates/<%= candidate.slug %>">
+    <a class="col-md-4 candidate-card" href="/candidates/<%= candidate.slug %>">
       <div class="candidate-pic">
         <img src="<%= candidate.photo_url %>">
       </div>
