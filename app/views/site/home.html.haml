@@ -1,6 +1,10 @@
 %h1 Irish Elections Database
 %ul
   %li
+    %a= link_to 'Parties', parties_url
+  -#%li
+  -#  %a= link_to 'Constituencies', constituencies_url
+  %li
     %a= link_to 'Candidates', candidates_url
   %li
     %a= link_to 'Download All Candidates as CSV', candidates_url(format: :csv)
