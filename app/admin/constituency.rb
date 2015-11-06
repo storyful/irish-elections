@@ -1,4 +1,6 @@
 ActiveAdmin.register Constituency do
+  remove_filter :candidates
+  
   controller do
     def find_resource
       begin
