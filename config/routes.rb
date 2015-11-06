@@ -6,7 +6,11 @@ Rails.application.routes.draw do
   get 'about' => 'site#about'
   get 'test' => 'site#candidates_csv'
 
-  resources :parties, only: [:index, :show]
+  resources :parties, only: [:index, :show] do
+    resources :constituencies, only: [:index, :show]
+  end
+  resources :constituencies, only: [:index, :show] do
+    resources :parties, only: [:index, :show]
+  end
   resources :candidates, only: [:index, :show]
-  resources :constituencies, only: [:index, :show]
 end
