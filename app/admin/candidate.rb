@@ -21,4 +21,13 @@ ActiveAdmin.register Candidate do
     end
     f.actions
   end
+
+  index do
+    column :first_name
+    column :last_name
+    column :alias
+    column :party
+    column :constituency
+    column :current_td
+  end
 end
