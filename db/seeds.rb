@@ -18,7 +18,7 @@ Party.create parties
 candidates = CSV.foreach("#{Rails.root}/db/data/candidates.csv").map do |timestamp, first_name, last_name, aka, party, constituency , website, profile, email, kildare_street_source, is_td, image, facebook, twitter, linkedin, youtube, snapchat, instagram, phone_1, phone_2, gender, source, is_councillor, dob, is_senator, expenses|
   next if first_name.blank? || first_name == 'First name'  
   constituency_fixed = constituency.to_s.gsub(/Dublin South Central/, 'Dublin South–Central')
-  fields = { 
+  fields = {
     first_name: first_name,
     last_name: last_name,
     aka: aka,

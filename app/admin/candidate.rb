@@ -36,11 +36,15 @@ ActiveAdmin.register Candidate do
   end
 
   index do
+    column :id
     column :first_name
     column :last_name
     column :alias
     column :party
     column :constituency
-    column :current_td
+    column "TD", :current_td
+    column "Councillor", :current_councillor
+    column "Senator", :current_senator
+    actions
   end
 end
