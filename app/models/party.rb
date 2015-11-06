@@ -3,6 +3,8 @@ class Party < ActiveRecord::Base
   friendly_id :name, use: :slugged
   acts_as_api
 
+  has_many :candidates
+
   api_accessible :default do |template|
     template.add :name
     template.add :url
