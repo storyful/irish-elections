@@ -7,4 +7,5 @@ Rails.application.routes.draw do
 
   resources :parties, only: [:index, :show]
   resources :candidates, only: [:index, :show]
+  resources :constituencies, only: [:index, :show]
 end
