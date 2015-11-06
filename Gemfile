@@ -62,3 +62,4 @@ gem 'capistrano-bundler'
 
 gem 'devise'
 gem 'activeadmin', github: 'activeadmin'
+gem 'haml-rails', '~> 0.9'
