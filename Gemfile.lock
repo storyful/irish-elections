@@ -259,8 +259,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  apipie-rails
   activeadmin!
+  apipie-rails
   byebug
   capistrano (~> 3.4.0)
   capistrano-bundler
