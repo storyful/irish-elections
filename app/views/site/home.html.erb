@@ -3,7 +3,7 @@
   <a href="/about">Read More</a>
   <h3>Search by name or constiuency</h3>
   <input type="text" name="searchTerm">
-  <h4>Download Full CSV</h4>
+  <h4><%= link_to 'Download Full CSV', candidates_url(format: :csv) %></h4>
 </div>
 <div class="col-lg-6">
   <iframe width="460" height="259" src="https://www.youtube.com/embed/kfVsfOSbJY0" frameborder="0" allowfullscreen></iframe>
