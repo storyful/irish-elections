@@ -33,7 +33,7 @@ candidates = CSV.foreach("#{Rails.root}/db/data/candidates.csv").map do |timesta
     photo_url: image,
     party_profile_url: profile,
     website_url: website,
-    twitter_url: twitter,
+    twitter_url: twitter.to_s.split("?")[0],
     facebook_url: facebook,
     instagram_url: instagram,
     snapchat_url: snapchat,
