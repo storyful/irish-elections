@@ -24,4 +24,14 @@ set :bundle_binstubs, false
 
 namespace :deploy do
   after :finishing, 'deploy:cleanup'
+  after :restart, :clear_cache do
+    on roles(:app, :worker), in: :groups, limit: 3, wait: 10 do
+      # Here we can do anything such as:
+      within release_path do
+        execute :rake, 'cache:clear'
+      end
+    end
+  end
 end
+
+

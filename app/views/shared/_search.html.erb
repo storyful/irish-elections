@@ -1,4 +1,4 @@
-<%= form_tag candidates_path, :method => 'get' do %>
+<%= form_tag candidates_path, :method => 'get', enforce_utf8: false do %>
     <p>
       <%= text_field_tag :q, params[:q] %>
       <%= submit_tag "Search", :name => nil %>
