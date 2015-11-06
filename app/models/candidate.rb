@@ -44,6 +44,12 @@ class Candidate < ActiveRecord::Base
     ]
   end
 
+  def full_name
+    name = "#{first_name} #{last_name}"
+    name += " (#{aka})" if aka
+    name
+  end
+
   def label
     [first_name, last_name].join(' ')
   end
