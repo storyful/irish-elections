@@ -5,14 +5,15 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-ActiveRecord::Base.connection.execute("truncate constituencies restart identity")
+ActiveRecord::Base.connection.execute("truncate constituencies, candidates, parties restart identity")
 
 AdminUser.create!(email: 'ied@storyful.com', password: 'password', password_confirmation: 'password') if AdminUser.count == 0
 
 constituencies = CSV.foreach("#{Rails.root}/db/data/constituencies.csv").map { |name, seats| { name: name, num_seats: seats } }
-
 Constituency.create constituencies
 
-['Fianna Fáil', 'Fine Gael', 'Labour Party', 'Sinn Féin', 'Renua', 'Green Party', 'Social Democrats', 'The Socialist Party', 'The Workers\' Party', 'Communist Party of Ireland', 'Stop the Water Tax - Socialist', 'Independent'].each do |party|
-  Party.create(name: party)
-end
+parties = CSV.foreach("#{Rails.root}/db/data/parties.csv").map { |name, seats| { name: name } }
+Party.create parties
+
+candidates = CSV.foreach("#{Rails.root}/db/data/candidates.csv").map { |name, seats| { name: name } }
+Candidate.create candidates
