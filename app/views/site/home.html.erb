@@ -1,14 +1,16 @@
-  <div class="home-container">
+<div class="home-container">
+  <div class="home-wrap">
     <div class="col-md-6">
       <h4>The Irish Election Open Database has been compiled to help citizens, news organizations, universities, and others easily find information about candidates running in 2016 general election. On this site you can search for candidates, download a CSV file of the data we have gathered, and access our open API.</h4>
 
       <h4>Read the about page to learn more about the project and how you can get involved!</h4>
       <a href="/about">Read More</a>
-      <h3>Search by name or constituency</h3>
+      <h3 class="search-text">Search by name or constituency</h3>
       <%= render 'shared/search' %>
-      <h4><%= link_to 'Download Full CSV', candidates_url(format: :csv) %></h4>
+      <h4><i class="fa fa-download"></i> <%= link_to 'Download Full CSV', candidates_url(format: :csv) %></h4>
     </div>
     <div class="col-md-6">
       <iframe width="460" height="259" src="https://www.youtube.com/embed/kfVsfOSbJY0" frameborder="0" allowfullscreen></iframe>
     </div>
   </div>
+</div>
