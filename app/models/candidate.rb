@@ -8,7 +8,9 @@ class Candidate < ActiveRecord::Base
 
   phony_normalize :phone_1, default_country_code: 'IE'
   phony_normalize :phone_2, default_country_code: 'IE'
-  
+
+  validates :constituency_id, presence: true
+
   api_accessible :default do |template|
     template.add :first_name
     template.add :last_name

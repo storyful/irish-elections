@@ -15,7 +15,7 @@ class CandidatesController < ApplicationController
   end
 
   def show
-    @candidate = Candidate.find(params[:id])
+    @candidate = Candidate.friendly.find(params[:id])
     respond_to do |format|
       format.html
       format.json { render_for_api :default, json: @candidate }
