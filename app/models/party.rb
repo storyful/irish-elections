@@ -4,6 +4,7 @@ class Party < ActiveRecord::Base
   acts_as_api
 
   has_many :candidates
+  has_many :constituencies, -> { distinct }, through: :candidates
 
   api_accessible :default do |template|
     template.add :id
