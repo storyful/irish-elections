@@ -51,3 +51,6 @@ gem 'capistrano-rails'
 gem 'capistrano-passenger'
 gem 'capistrano-rvm'
 gem 'capistrano-bundler'
+
+gem 'devise'
+gem 'activeadmin', github: 'activeadmin'
