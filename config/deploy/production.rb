@@ -1,4 +1,4 @@
-server 'irish-elections.storyful.com', user: 'storyful', roles: %w{app db web}
+server 'irish-elections.storyful.com', user: 'storyful', roles: %w(app db web)
 set :stage,     :production
 set :rails_env, 'production'
 set :deploy_to, "/home/#{fetch(:user)}/#{fetch(:application)}"

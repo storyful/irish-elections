@@ -1,0 +1,19 @@
+require: rubocop-rspec
+
+Metrics/LineLength:
+  Enabled: false
+
+Documentation:
+  Enabled: false
+
+Style/DoubleNegation:
+  Enabled: false
+
+RSpec/DescribeClass:
+  Exclude:
+    - spec/requests/**/*
+
+AllCops:
+  Exclude:
+    - db/schema.rb
+    - bin/**/*
