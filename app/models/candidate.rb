@@ -79,4 +79,12 @@ class Candidate < ActiveRecord::Base
     return 'Councillor' if current_councillor
     return 'Senator' if current_senator
   end
+
+  def constituency_name
+    constituency.try(:name)
+  end
+
+  def party_name
+    party.try(:party)
+  end
 end

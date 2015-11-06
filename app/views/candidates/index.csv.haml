@@ -1,5 +1,5 @@
 - require 'csv'
-- headers = ['First Name', 'Last Name']
-- CSV.generate_line headers
+- headers = [:first_name, :last_name, :aka, :date_of_birth, :gender, :photo_url, :party_profile_url, :website_url, :twitter_url, :facebook_url, :instagram_url, :linkedin_url, :youtube_url, :source_url, :voting_record_url, :claimed_expenses, :constituency_name, :party_name]
+= CSV.generate_line(headers).strip
 - @candidates.each do |c|
-  = CSV.generate_line([c.first_name, c.last_name])
+  = CSV.generate_line(headers.map{|h| c.send(h)}).strip

@@ -11,14 +11,35 @@
   float: left;
 }
 .single-candidate {
+
+  border-bottom: 1px solid $grey-light;
+
   h1 {
     font-size: 28px;
     color: $orange;
     text-align: center;
   }
 
+  h4, h5 {
+    font-size: 16px;
+  }
+
+  h4, i {
+    color: $grey-dark;
+  }
+
+  h5 {
+    color: $grey-light;
+    margin-bottom: 30px;
+  }
+
+  .candidate-contacts h5 {
+    margin-bottom: 15px;
+  }
+
   .candidate-details {
     float: right;
+    width: 68%;
   }
 }
 .candidate-card {
