@@ -13,6 +13,6 @@ class Constituency < ActiveRecord::Base
   end
 
   def path
-    "/constituency/#{slug}"
+    "/constituencies/#{slug}"
   end
 end
