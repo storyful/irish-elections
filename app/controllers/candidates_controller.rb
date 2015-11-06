@@ -2,7 +2,7 @@ class CandidatesController < ApplicationController
   api :GET, '/candidates'
 
   def index
-    @candidates = Candidate.includes(:party, :constituency).all
+    @candidates = candidates
     respond_to do |format|
       format.html
       format.json { render_for_api :default, json: @candidates }
@@ -20,6 +20,16 @@ class CandidatesController < ApplicationController
       format.html
       format.json { render_for_api :default, json: @candidate }
       format.xml { render_for_api :default, xml: @candidate }
+    end
+  end
+
+  protected
+
+  def candidates
+    if params[:q].present?
+      Candidate.search(params[:q])
+    else
+      Candidate.list
     end
   end
 

@@ -1,0 +1,9 @@
+%h1 Candidates
+= render 'shared/search'
+%table
+
+  - @candidates.each do |c|
+    %tr
+      %td= c.label
+      %td= c.party.try(:name)
+      %td= c.constituency.try(:name)

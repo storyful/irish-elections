@@ -29,6 +29,23 @@ class Candidate < ActiveRecord::Base
     template.add :path
   end
 
+  def self.search(term)
+    search = "%#{term}%"
+    with_associations.joins("LEFT OUTER JOIN constituencies ON constituencies.id = candidates.constituency_id").where(
+        [
+            "candidates.first_name || candidates.last_name ILIKE ? OR constituencies.name ILIKE ?", search, search
+        ]
+    )
+  end
+
+  def self.list
+    with_associations.all
+  end
+
+  def self.with_associations
+    self.includes(:party, :constituency)
+  end
+
   # def party_name
   #   party.try(:name)
   # end
