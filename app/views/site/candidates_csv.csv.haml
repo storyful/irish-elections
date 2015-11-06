@@ -1,0 +1,5 @@
+- require 'csv'
+- headers = ['First Name', 'Last Name']
+- CSV.generate_line headers
+- @candidates.each do |c|
+  = CSV.generate_line([c.first_name, c.last_name])

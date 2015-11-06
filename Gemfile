@@ -65,4 +65,4 @@ gem 'apipie-rails'
 gem 'devise'
 gem 'activeadmin', github: 'activeadmin'
 gem 'haml-rails', '~> 0.9'
-gem "twitter-bootstrap-rails"
+gem 'twitter-bootstrap-rails'
