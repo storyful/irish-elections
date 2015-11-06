@@ -72,4 +72,8 @@ ActiveRecord::Schema.define(version: 20151106105202) do
     t.datetime "updated_at",                                                null: false
   end
 
+  create_table "parties", force: :cascade do |t|
+    t.string "name"
+  end
+
 end
