@@ -6,6 +6,8 @@ class Party < ActiveRecord::Base
   has_many :candidates
 
   api_accessible :default do |template|
+    template.add :id
+    template.add :slug
     template.add :name
     template.add :path
   end

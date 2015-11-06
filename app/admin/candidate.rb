@@ -1,5 +1,5 @@
 ActiveAdmin.register Candidate do
-  permit_params :first_name, :last_name, :aka, :date_of_birth, :gender, :photo_url, :party_profile_url, :website_url, :twitter_url, :facebook_url, :instagram_url, :linkedin_url, :youtube_url, :source_url, :voting_record_url, :claimed_expenses, :constituency, :party
+  permit_params :first_name, :last_name, :aka, :date_of_birth, :gender, :photo_url, :party_profile_url, :website_url, :twitter_url, :facebook_url, :instagram_url, :linkedin_url, :youtube_url, :source_url, :voting_record_url, :claimed_expenses, :constituency_id, :party_id
 
   controller do
     def find_resource
@@ -35,12 +35,47 @@ ActiveAdmin.register Candidate do
     f.actions
   end
 
+  show as: :grid do |c|
+    attributes_table do
+      row :image do
+        link_to image_tag(c.photo_url, height: 128, width: 128), c.photo_url, target: '_blank'
+      end
+
+      row :first_name
+      row :last_name
+      row :aka
+      row :date_of_birth
+      row :gender
+      row :photo_url
+      row :party_profile_url
+      row :website_url
+      row :twitter_url
+      row :facebook_url
+      row :instagram_url
+      row :linkedin_url
+      row :youtube_url
+      row :source_url
+      row :voting_record_url
+      row :claimed_expenses
+      row :constituency
+      row :party
+    end
+  end
+
   index do
+    column "Image" do |c|
+      link_to image_tag(c.photo_url, height: 24, width: 24), c.photo_url, target: '_blank'
+    end
+    
+    column :id
     column :first_name
     column :last_name
     column :alias
     column :party
     column :constituency
-    column :current_td
+    column "TD", :current_td
+    column "Councillor", :current_councillor
+    column "Senator", :current_senator
+    actions
   end
 end
