@@ -1,4 +1,5 @@
 ActiveAdmin.register Candidate do
+  permit_params [:first_name, :last_name]
   form do |f|
     f.inputs do
       f.input :first_name

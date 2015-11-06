@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   get 'test' => 'site#candidates_csv'
 
   resources :parties, only: [:index]
+  resources :candidates, only: [:index]
 end
