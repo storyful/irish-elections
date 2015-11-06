@@ -54,6 +54,10 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    acts_as_api (0.4.2)
+      activemodel (>= 3.0.0)
+      activesupport (>= 3.0.0)
+      rack (>= 1.1.0)
     apipie-rails (0.3.5)
       json
     arbre (1.0.3)
@@ -329,6 +333,7 @@ PLATFORMS
 
 DEPENDENCIES
   activeadmin!
+  acts_as_api
   apipie-rails
   byebug
   capistrano (~> 3.4.0)
