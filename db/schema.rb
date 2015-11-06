@@ -93,7 +93,7 @@ ActiveRecord::Schema.define(version: 20151106121528) do
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
 
   create_table "parties", force: :cascade do |t|
-    t.string "name", null: false
+    t.string "name"
     t.string "slug"
   end
 
