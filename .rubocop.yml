@@ -18,3 +18,4 @@ AllCops:
     - db/schema.rb
     - bin/**/*
     - db/migrate/*.rb
+    - Guardfile
