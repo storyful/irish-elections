@@ -1,4 +1,4 @@
-ActiveAdmin.register Constituency do
+ActiveAdmin.register Party do
   controller do
     def find_resource
       begin
