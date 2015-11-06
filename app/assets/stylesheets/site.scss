@@ -1,3 +1,26 @@
 // Place all the styles related to the site controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+  width: 1200px;
+  margin: auto;
+}
+.main-container {
+  width: 980px;
+}
+.header-bar {
+  height: 155px;
+  background: white;
+}
+.header-menu {
+  float: right !important;
+  margin-right: -30px;
+  margin-top: 85px;
+  text-transform: uppercase;
+  a {
+    color: #616262;
+    text-decoration: none;
+    font-size: 18px;
+  }
+}
