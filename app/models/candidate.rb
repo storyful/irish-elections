@@ -6,11 +6,6 @@ class Candidate < ActiveRecord::Base
 
   friendly_id :slug_candidates, use: :slugged
 
-  phony_normalize :phone_1, default_country_code: 'IE'
-  phony_normalize :phone_2, default_country_code: 'IE'
-
-  validates :constituency_id, presence: true
-
   api_accessible :default do |template|
     template.add :first_name
     template.add :last_name
@@ -29,18 +24,18 @@ class Candidate < ActiveRecord::Base
     template.add :source_url
     template.add :voting_record_url
     template.add :claimed_expenses
-    template.add :party_name, as: :party
-    template.add :constituency_name, as: :constituency
+    template.add :party
+    template.add :constituency
     template.add :path
   end
 
-  def party_name
-    party.name
-  end
-
-  def constituency_name
-    constituency.name
-  end
+  # def party_name
+  #   party.try(:name)
+  # end
+  #
+  # def constituency_name
+  #   constituency.try(:name)
+  # end
 
   def slug_candidates
     [
