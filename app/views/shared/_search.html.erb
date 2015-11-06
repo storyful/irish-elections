@@ -1,0 +1,6 @@
+<%= form_tag candidates_path, :method => 'get' do %>
+    <p>
+      <%= text_field_tag :q, params[:q] %>
+      <%= submit_tag "Search", :name => nil %>
+    </p>
+<% end %>
