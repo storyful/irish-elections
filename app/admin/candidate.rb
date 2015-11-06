@@ -36,6 +36,10 @@ ActiveAdmin.register Candidate do
   end
 
   index do
+    column "Image" do |c|
+      link_to image_tag(c.photo_url, height: 24, width: 24), c.photo_url, target: '_blank'
+    end
+    
     column :id
     column :first_name
     column :last_name
