@@ -11,9 +11,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20151106103438) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "candidates", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "alias"
+    t.string   "string"
+    t.date     "date_of_birth"
+    t.string   "gender"
+    t.boolean  "current_td",                                default: false, null: false
+    t.text     "photo_url"
+    t.text     "party_profile_url"
+    t.text     "website_url"
+    t.text     "twitter_url"
+    t.text     "facebook_url"
+    t.text     "instagram_url"
+    t.text     "linkedin_url"
+    t.text     "youtube_url"
+    t.text     "source_url"
+    t.text     "voting_record_url"
+    t.decimal  "claimed_expenses",  precision: 9, scale: 2
+    t.datetime "created_at",                                                null: false
+    t.datetime "updated_at",                                                null: false
+  end
 
 end
