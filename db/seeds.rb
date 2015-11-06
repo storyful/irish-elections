@@ -5,8 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+ActiveRecord::Base.connection.execute("truncate constituencies")
 
-AdminUser.create!(email: 'ied@storyful.com', password: 'password', password_confirmation: 'password')
+AdminUser.create!(email: 'ied@storyful.com', password: 'password', password_confirmation: 'password') if AdminUser.count == 0
 
 constituencies = CSV.foreach("#{Rails.root}/db/data/constituencies.csv").map { |name, seats| { name: name, num_seats: seats } }
 
