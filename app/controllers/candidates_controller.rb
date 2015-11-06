@@ -32,6 +32,8 @@ class CandidatesController < ApplicationController
       Candidate.search(params[:q])
     elsif params[:constituency_id].present?
       Constituency.friendly.find(params[:constituency_id]).candidates
+    elsif params[:party_id].present?
+      Party.friendly.find(params[:party_id]).candidates
     else
       Candidate.list
     end
