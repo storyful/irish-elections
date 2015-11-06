@@ -259,11 +259,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-<<<<<<< HEAD
   apipie-rails
-=======
   activeadmin!
->>>>>>> 3bfe0fdb1cd3bca2fa7b5079381b7b19ee893b8c
   byebug
   capistrano (~> 3.4.0)
   capistrano-bundler
