@@ -1,12 +1,12 @@
 <div class="home-container content-wrapper bg-orange">
   <div class="container">
     <div class="col-md-6 intro">
-      <h4>Welcome to the Irish Election Open Database Powered by storyful.</h4>
+      <h4>Welcome to the Irish Election Open Database Powered by Storyful.</h4>
 
       <a href="/about">Read more</a>
       <h4 class="search-text">Search by name or constituency</h4>
       <%= render 'shared/search' %>
-      <h4><i class="fa fa-download"></i> <%= link_to 'Download Full CSV', candidates_url(format: :csv) %></h4>
+      <h4 class="download-csv"><i class="fa fa-download"></i> <%= link_to 'Download Full CSV', candidates_url(format: :csv) %></h4>
     </div>
     <div class="col-md-6">
       <iframe width="460" height="259" src="https://www.youtube.com/embed/GdKUql_zpQ8" frameborder="0" allowfullscreen></iframe>

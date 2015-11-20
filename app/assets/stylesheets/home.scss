@@ -26,4 +26,19 @@
     margin-top: 40px;
     font-weight: normal;
   }
+
+  .candidates-search {
+    input {
+      background-color: $orange;
+      border: 2px solid white;
+      padding: 5px;
+      display: block;
+      font-size: 22px;
+      border-radius: 0px;
+    }
+  }
+
+  .download-csv {
+    margin-top: 45px;
+  }
 }
