@@ -5,25 +5,38 @@ body {
   background-color: $grey-white;
   font-family: 'Roboto', sans-serif;
 }
-.main-container {
-  // width: 980px;
-  margin: auto;
+.container {
+    position: relative;
 }
-.header-bar {
-  height: 155px;
-  background: white;
-  margin-bottom: 0px;
-}
-.header-menu {
-  float: right !important;
-  margin-top: 85px;
-  text-transform: uppercase;
-  a {
-    color: #616262;
-    text-decoration: none;
-    font-size: 18px;
+
+.main-header {
+  .header-bar {
+    height: 155px;
+    background: white;
+    margin-bottom: 0px;
+  }
+  .header-menu {
+    float: right !important;
+    margin-top: 85px;
+    text-transform: uppercase;
+    a {
+      color: #616262;
+      text-decoration: none;
+      font-size: 18px;
+    }
+  }
+  .logo {
+    background: center center image-url('logo.png');
+    width: 190px;
+    height: 190px;
+    display: block;
+    position: absolute;
+    z-index: 1001;
+    top: 10px;
+    left: 15px;
   }
 }
+
 .sub-header {
   height: 135px;
 }
