@@ -46,6 +46,10 @@ class Candidate < ActiveRecord::Base
     self.includes(:party, :constituency)
   end
 
+  def twitter_url
+    "https://twitter.com/#{twitter_handle}" unless twitter_handle.blank?
+  end
+
   # def party_name
   #   party.try(:name)
   # end
