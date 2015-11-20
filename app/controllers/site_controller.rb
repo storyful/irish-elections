@@ -4,6 +4,7 @@ class SiteController < ApplicationController
   end
 
   def about
+    @pagetitle = "About"
   end
 
   def candidates_csv
