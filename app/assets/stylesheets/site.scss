@@ -44,3 +44,15 @@ body {
 .content-wrapper {
   width: 100%;
 }
+
+.main-footer {
+  padding: 45px 0px;
+
+  .address {
+    float: left;
+  }
+
+  .socials {
+    float: right;
+  }
+}
