@@ -4,54 +4,58 @@
     </div>
   </div>
 </div>
-<div class="col-xs-12 container single-candidate">
-  <h1>Candidate</h1>
-  <div class="col-md-4">
-    <div class="candidate-pic">
-      <img src="<%= @candidate.photo_url %>">
+<div class="content-wrapper bg-grey-white">
+  <div class="container">
+    <div class="col-xs-12 container single-candidate">
+      <h1>Candidate</h1>
+      <div class="col-md-4">
+        <div class="candidate-pic">
+          <img src="<%= @candidate.photo_url %>">
+        </div>
+        <div class="candidate-details">
+          <h4>Name</h4>
+          <h5><%= @candidate.full_name %></h5>
+          <h4>Gender</h4>
+          <h5><%= @candidate.gender %></h5>
+          <h4>Date of birth</h4>
+          <h5><%= @candidate.date_of_birth %></h5>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <h4>Party</h4>
+        <h5><%= @candidate.try(:party).name %></h5>
+        <h4>Constituency</h4>
+        <h5><%= @candidate.try(:constituency).name %></h5>
+        <% if @candidate.position %>
+          <h4>Position</h4>
+          <h5><%= @candidate.position %></h5>
+        <% end %>
+        <!-- <h4>2014 expences</h4>
+        <h5><%= @candidate.claimed_expenses %></h5> -->
+      </div>
+      <div class="col-md-4 candidate-contacts">
+        <h4>Contact</h4>
+        <% if @candidate.phone_1 %>
+        <h5>t: <%= @candidate.phone_1 %></h5>
+        <% end %>
+        <% if @candidate.phone_2 %>
+        <h5>t: <%= @candidate.phone_2 %></h5>
+        <% end %>
+        <% if @candidate.email %>
+        <h5>e: <%= @candidate.email %></h5>
+        <% end %>
+        <% if @candidate.website_url %>
+        <h5>w: <%= @candidate.website_url %></h5>
+        <% end %>
+        <h4>Social</h4>
+        <% ['facebook', 'twitter', 'instagram', 'linkedin', 'youtube'].each do |social| %>
+          <% if @candidate.send("#{social}_url".to_sym) %>
+            <a href="<%= @candidate.send("#{social}_url".to_sym) %>" target="_blank" class="social-link">
+              <i class="fa fa-<%= social %>"></i>
+            </a>
+          <% end %>
+        <% end %>
+      </div>
     </div>
-    <div class="candidate-details">
-      <h4>Name</h4>
-      <h5><%= @candidate.full_name %></h5>
-      <h4>Gender</h4>
-      <h5><%= @candidate.gender %></h5>
-      <h4>Date of birth</h4>
-      <h5><%= @candidate.date_of_birth %></h5>
-    </div>
-  </div>
-  <div class="col-md-4">
-    <h4>Party</h4>
-    <h5><%= @candidate.try(:party).name %></h5>
-    <h4>Constituency</h4>
-    <h5><%= @candidate.try(:constituency).name %></h5>
-    <% if @candidate.position %>
-      <h4>Position</h4>
-      <h5><%= @candidate.position %></h5>
-    <% end %>
-    <h4>2014 expences</h4>
-    <h5><%= @candidate.claimed_expenses %></h5>
-  </div>
-  <div class="col-md-4 candidate-contacts">
-    <h4>Contact</h4>
-    <% if @candidate.phone_1 %>
-    <h5>t: <%= @candidate.phone_1 %></h5>
-    <% end %>
-    <% if @candidate.phone_2 %>
-    <h5>t: <%= @candidate.phone_2 %></h5>
-    <% end %>
-    <% if @candidate.email %>
-    <h5>e: <%= @candidate.email %></h5>
-    <% end %>
-    <% if @candidate.website_url %>
-    <h5>w: <%= @candidate.website_url %></h5>
-    <% end %>
-    <h4>Social</h4>
-    <% ['facebook', 'twitter', 'instagram', 'linkedin', 'youtube'].each do |social| %>
-      <% if @candidate.send("#{social}_url".to_sym) %>
-        <a href="<%= @candidate.send("#{social}_url".to_sym) %>" target="_blank" class="social-link">
-          <i class="fa fa-<%= social %>"></i>
-        </a>
-      <% end %>
-    <% end %>
   </div>
 </div>
