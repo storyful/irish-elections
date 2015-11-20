@@ -4,9 +4,13 @@ $grey-dark: #616262;
 $grey-light: #7c7d7d;
 
 .bg-white {
-  background: white;
+  background-color: white;
 }
 
 .bg-orange {
-  background: $orange;
+  background-color: $orange;
+}
+
+.bg-grey-white {
+  background-color: $grey-white
 }

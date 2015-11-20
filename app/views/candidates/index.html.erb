@@ -1,16 +1,24 @@
-<div class="col-xs-12 sub-header">
-  <%= render 'shared/search' %>
+<div class="content-wrapper bg-orange">
+  <div class="container">
+    <div class="col-xs-12 sub-header">
+      <%= render 'shared/search' %>
+    </div>
+  </div>
 </div>
-<div class="col-xs-12 container">
-  <% @candidates.each do |candidate| %>
-    <a class="col-md-4 candidate-card" href="/candidates/<%= candidate.slug %>">
-      <div class="candidate-pic">
-        <img src="<%= candidate.photo_url %>">
-      </div>
-      <div class="candidate-info">
-        <h5><%= candidate.first_name %> <%= candidate.last_name %></h5>
-        <p><%= candidate.constituency.try(:name) %></p>
-      </div>
-    </a>
-  <% end %>
+<div class="content-wrapper bg-grey-white">
+  <div class="container">
+    <div class="col-xs-12">
+      <% @candidates.each do |candidate| %>
+        <a class="col-md-4 candidate-card" href="/candidates/<%= candidate.slug %>">
+          <div class="candidate-pic">
+            <img src="<%= candidate.photo_url %>">
+          </div>
+          <div class="candidate-info">
+            <h5><%= candidate.first_name %> <%= candidate.last_name %></h5>
+            <p><%= candidate.constituency.try(:name) %></p>
+          </div>
+        </a>
+      <% end %>
+    </div>
+  </div>
 </div>
