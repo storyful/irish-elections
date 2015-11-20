@@ -1,10 +1,10 @@
 <div class="home-container content-wrapper bg-orange">
   <div class="container">
-    <div class="col-md-6">
+    <div class="col-md-6 intro">
       <h4>Welcome to the Irish Election Open Database Powered by storyful.</h4>
 
       <a href="/about">Read more</a>
-      <h3 class="search-text">Search by name or constituency</h3>
+      <h4 class="search-text">Search by name or constituency</h4>
       <%= render 'shared/search' %>
       <h4><i class="fa fa-download"></i> <%= link_to 'Download Full CSV', candidates_url(format: :csv) %></h4>
     </div>
