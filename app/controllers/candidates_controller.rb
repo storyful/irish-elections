@@ -5,6 +5,7 @@ class CandidatesController < ApplicationController
 
   def index
     @candidates = candidates
+    @pagetitle = 'Candidates'
     respond_to do |format|
       format.html
       format.json { render_for_api :default, json: @candidates }
@@ -18,6 +19,7 @@ class CandidatesController < ApplicationController
 
   def show
     @candidate = Candidate.friendly.find(params[:id])
+    @pagetitle = @candidate.full_name
     respond_to do |format|
       format.html
       format.json { render_for_api :default, json: @candidate }
