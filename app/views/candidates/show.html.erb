@@ -45,7 +45,7 @@
     <h4>Social</h4>
     <% ['facebook', 'twitter', 'instagram', 'linkedin', 'youtube'].each do |social| %>
       <% if @candidate.send("#{social}_url".to_sym) %>
-        <a href="<%= @candidate.send("#{social}_url".to_sym) %>" target="_blank">
+        <a href="<%= @candidate.send("#{social}_url".to_sym) %>" target="_blank" class="social-link">
           <i class="fa fa-<%= social %>"></i>
         </a>
       <% end %>

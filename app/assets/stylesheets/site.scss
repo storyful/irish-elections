@@ -1,13 +1,12 @@
 @import 'shared';
 
 body {
-  width: 1200px;
   margin: auto;
   background-color: $grey-white;
   font-family: 'Roboto', sans-serif;
 }
 .main-container {
-  width: 980px;
+  // width: 980px;
   margin: auto;
 }
 .header-bar {
@@ -17,7 +16,6 @@ body {
 }
 .header-menu {
   float: right !important;
-  margin-right: -30px;
   margin-top: 85px;
   text-transform: uppercase;
   a {

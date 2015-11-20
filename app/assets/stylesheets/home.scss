@@ -1,14 +1,15 @@
 @import 'shared';
 
 .home-container {
-  background-color: $orange;
   display: inline-block;
   color: white;
   height: 400px;
   padding-top: 50px;
+  width: 100%;
   a {
     color: white;
   }
+
   input {
     color: black;
   }
