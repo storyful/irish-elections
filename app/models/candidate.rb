@@ -6,6 +6,8 @@ class Candidate < ActiveRecord::Base
 
   friendly_id :slug_candidates, use: :slugged
 
+  before_save :normalize_twitter_handle, if: :twitter_handle
+
   api_accessible :default do |template|
     template.add :first_name
     template.add :last_name
@@ -90,5 +92,11 @@ class Candidate < ActiveRecord::Base
 
   def party_name
     party.try(:party)
+  end
+
+  private
+
+  def normalize_twitter_handle
+    self.twitter_handle = twitter_handle.to_s.split(".com/").last.to_s.split("@").last 
   end
 end
