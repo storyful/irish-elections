@@ -5,7 +5,7 @@ module CandidateHelper
     elsif candidate.photo_url.present?
       candidate.photo_url
     else
-      ""
+      image_url('avatar.jpg')
     end
   end
 end
