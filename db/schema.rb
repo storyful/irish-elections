@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151106163244) do
+ActiveRecord::Schema.define(version: 20151120113405) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,7 +59,7 @@ ActiveRecord::Schema.define(version: 20151106163244) do
     t.text     "photo_url"
     t.text     "party_profile_url"
     t.text     "website_url"
-    t.text     "twitter_url"
+    t.text     "twitter_handle"
     t.text     "facebook_url"
     t.text     "instagram_url"
     t.text     "linkedin_url"
@@ -72,18 +72,18 @@ ActiveRecord::Schema.define(version: 20151106163244) do
     t.integer  "party_id"
     t.integer  "constituency_id"
     t.string   "email"
-    t.string   "slug"
     t.boolean  "current_councillor",                         default: false, null: false
     t.boolean  "current_senator",                            default: false, null: false
     t.text     "snapchat_url"
     t.string   "phone_1"
     t.string   "phone_2"
+    t.string   "slug"
   end
 
   create_table "constituencies", force: :cascade do |t|
-    t.string  "name",                  null: false
+    t.string  "name",      null: false
     t.string  "slug"
-    t.integer "num_seats", default: 0, null: false
+    t.integer "num_seats", null: false
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
@@ -100,7 +100,7 @@ ActiveRecord::Schema.define(version: 20151106163244) do
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
 
   create_table "parties", force: :cascade do |t|
-    t.string "name", null: false
+    t.string "name"
     t.string "slug"
   end
 

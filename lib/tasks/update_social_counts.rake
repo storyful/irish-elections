@@ -1,13 +1,12 @@
 namespace :social do
   desc "Update twitter counts for all candidates."
   task :update_twitter_counts do
-    candidates = Candidate.where.not(twitter_url: nil)
+    candidates = Candidate.where.not(twitter_handle: nil)
 
     candidates.each do |candidate|
-      twitter_username = candidate.twitter_url.match(%r{^\w+://twitter.com/(\w+)}i)[1] rescue nil
-      next unless twitter_username.present?
+      next unless twitter_handle.present?
 
-      followers_count = begin TwitterService.new.user(twitter_username).followers_count
+      followers_count = begin TwitterService.new.user(twitter_handle).followers_count
       rescue Twitter::Error::NotFound
         nil
       end

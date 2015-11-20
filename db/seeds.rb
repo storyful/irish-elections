@@ -15,6 +15,9 @@ Constituency.create constituencies
 parties = CSV.foreach("#{Rails.root}/db/data/parties.csv").map { |name, seats| { name: name } }
 Party.create parties
 
+
+extract_handle = ->(source) { source.to_s.split(".com/").last.to_s.split("@").last }
+
 candidates = CSV.foreach("#{Rails.root}/db/data/candidates.csv").map do |timestamp, first_name, last_name, aka, party, constituency , website, profile, email, kildare_street_source, is_td, image, facebook, twitter, linkedin, youtube, snapchat, instagram, phone_1, phone_2, gender, source, is_councillor, dob, is_senator, expenses|
   next if first_name.blank? || first_name == 'First name'  
   constituency_fixed = constituency.to_s.gsub(/Dublin South Central/, 'Dublin South–Central')
@@ -33,7 +36,7 @@ candidates = CSV.foreach("#{Rails.root}/db/data/candidates.csv").map do |timesta
     photo_url: image,
     party_profile_url: profile,
     website_url: website,
-    twitter_url: twitter.to_s.split("?")[0],
+    twitter_handle: extract_handle.call(twitter),
     facebook_url: facebook,
     instagram_url: instagram,
     snapchat_url: snapchat,

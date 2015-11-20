@@ -1,5 +1,5 @@
 ActiveAdmin.register Candidate do
-  permit_params :first_name, :last_name, :aka, :date_of_birth, :gender, :photo_url, :party_profile_url, :website_url, :twitter_url, :facebook_url, :instagram_url, :linkedin_url, :youtube_url, :source_url, :voting_record_url, :claimed_expenses, :constituency_id, :party_id
+  permit_params :first_name, :last_name, :aka, :date_of_birth, :gender, :photo_url, :party_profile_url, :website_url, :twitter_handle, :facebook_url, :instagram_url, :linkedin_url, :youtube_url, :source_url, :voting_record_url, :claimed_expenses, :constituency_id, :party_id
 
   controller do
     def find_resource
@@ -21,7 +21,7 @@ ActiveAdmin.register Candidate do
       f.input :photo_url, as: :string
       f.input :party_profile_url, as: :string
       f.input :website_url, as: :string
-      f.input :twitter_url, as: :string
+      f.input :twitter_handle, as: :string
       f.input :facebook_url, as: :string
       f.input :instagram_url, as: :string
       f.input :linkedin_url, as: :string
@@ -49,7 +49,7 @@ ActiveAdmin.register Candidate do
       row :photo_url
       row :party_profile_url
       row :website_url
-      row :twitter_url
+      row :twitter_handle
       row :facebook_url
       row :instagram_url
       row :linkedin_url
