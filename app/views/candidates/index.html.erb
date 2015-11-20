@@ -11,7 +11,7 @@
       <% @candidates.each do |candidate| %>
         <a class="col-md-4 candidate-card" href="/candidates/<%= candidate.slug %>">
           <div class="candidate-pic">
-            <img src="<%= candidate.photo_url %>">
+            <img src="<%= profile_pic(candidate) %>">
           </div>
           <div class="candidate-info">
             <h5><%= candidate.first_name %> <%= candidate.last_name %></h5>
