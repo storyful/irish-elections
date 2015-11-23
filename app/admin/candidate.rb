@@ -38,7 +38,7 @@ ActiveAdmin.register Candidate do
   show as: :grid do |c|
     attributes_table do
       row :image do
-        link_to image_tag(c.photo_url, height: 128, width: 128), c.photo_url, target: '_blank'
+        link_to image_tag(profile_pic(c), height: 128, width: 128), profile_pic(c), target: '_blank'
       end
 
       row :first_name
@@ -64,7 +64,7 @@ ActiveAdmin.register Candidate do
 
   index do
     column "Image" do |c|
-      link_to image_tag(c.photo_url, height: 24, width: 24), c.photo_url, target: '_blank'
+      link_to image_tag(profile_pic(c), height: 24, width: 24), profile_pic(c), target: '_blank'
     end
     
     column :id
