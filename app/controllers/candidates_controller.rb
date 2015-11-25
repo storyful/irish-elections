@@ -37,7 +37,7 @@ class CandidatesController < ApplicationController
     elsif params[:party_id].present?
       Party.friendly.find(params[:party_id]).candidates
     else
-      Candidate.list
+      Candidate.list.order(last_name: :asc)
     end
   end
 
