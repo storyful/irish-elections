@@ -31,6 +31,9 @@ ActiveAdmin.register Candidate do
       f.input :claimed_expenses, step: 'any'
       f.input :constituency
       f.input :party
+      f.input :current_td
+      f.input :current_councillor
+      f.input :current_senator
     end
     f.actions
   end
