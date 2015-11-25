@@ -45,7 +45,7 @@
         <h5>e: <%= mail_to @candidate.email %></h5>
         <% end %>
         <% if @candidate.website_url %>
-        <h5>w: <%= link_to @candidate.website_url %></h5>
+        <h5>w: <%= link_to @candidate.website_url, @candidate.website_url %></h5>
         <% end %>
         <h4>Social</h4>
         <% ['facebook', 'twitter', 'instagram', 'linkedin', 'youtube'].each do |social| %>
