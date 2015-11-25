@@ -69,7 +69,7 @@ class Candidate < ActiveRecord::Base
 
   def full_name
     name = "#{first_name} #{last_name}"
-    name += " (#{aka})" if aka
+    name += " (#{aka})" if aka.present?
     name
   end
 
