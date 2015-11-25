@@ -36,16 +36,16 @@
       <div class="col-md-4 candidate-contacts">
         <h4>Contact</h4>
         <% if @candidate.phone_1 %>
-        <h5>t: <%= @candidate.phone_1 %></h5>
+        <h5>t: <%= link_to @candidate.phone_1, "tel:#{PhonyRails.normalize_number(@candidate.phone_1, country_code: 'IE')}" %></h5>
         <% end %>
         <% if @candidate.phone_2 %>
-        <h5>t: <%= @candidate.phone_2 %></h5>
+        <h5>t: <%= link_to @candidate.phone_2, "tel:#{PhonyRails.normalize_number(@candidate.phone_2, country_code: 'IE')}" %></h5>
         <% end %>
         <% if @candidate.email %>
-        <h5>e: <%= @candidate.email %></h5>
+        <h5>e: <%= mail_to @candidate.email %></h5>
         <% end %>
         <% if @candidate.website_url %>
-        <h5>w: <%= @candidate.website_url %></h5>
+        <h5>w: <%= link_to @candidate.website_url %></h5>
         <% end %>
         <h4>Social</h4>
         <% ['facebook', 'twitter', 'instagram', 'linkedin', 'youtube'].each do |social| %>
