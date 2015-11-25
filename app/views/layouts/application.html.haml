@@ -2,6 +2,7 @@
 %html
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    = render 'layouts/favicons'
     %title= @pagetitle || 'IrishElections'
     = stylesheet_link_tag 'application', 'https://fonts.googleapis.com/css?family=Roboto'
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
