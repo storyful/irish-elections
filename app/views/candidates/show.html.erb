@@ -23,9 +23,9 @@
       </div>
       <div class="col-md-4">
         <h4>Party</h4>
-        <h5><%= @candidate.try(:party).name %></h5>
+        <h5><%= @candidate.try(:party).try(:name) %></h5>
         <h4>Constituency</h4>
-        <h5><%= @candidate.try(:constituency).name %></h5>
+        <h5><%= @candidate.try(:constituency).try(:name) %></h5>
         <% if @candidate.position %>
           <h4>Position</h4>
           <h5><%= @candidate.position %></h5>
