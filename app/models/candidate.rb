@@ -23,6 +23,9 @@ class Candidate < ActiveRecord::Base
     template.add :instagram_url
     template.add :linkedin_url
     template.add :youtube_url
+    template.add :snapchat_url
+    template.add :phone_1
+    template.add :phone_2
     template.add :source_url
     template.add :voting_record_url
     template.add :claimed_expenses
@@ -97,6 +100,6 @@ class Candidate < ActiveRecord::Base
   private
 
   def normalize_twitter_handle
-    self.twitter_handle = twitter_handle.to_s.split(".com/").last.to_s.split("@").last 
+    self.twitter_handle = twitter_handle.to_s.split(".com/").last.to_s.split("@").last
   end
 end

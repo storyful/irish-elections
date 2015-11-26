@@ -1,5 +1,5 @@
 ActiveAdmin.register Candidate do
-  permit_params :first_name, :last_name, :aka, :date_of_birth, :gender, :photo_url, :party_profile_url, :website_url, :twitter_handle, :facebook_url, :instagram_url, :linkedin_url, :youtube_url, :source_url, :voting_record_url, :claimed_expenses, :constituency_id, :party_id
+  permit_params :first_name, :last_name, :aka, :date_of_birth, :gender, :photo_url, :party_profile_url, :website_url, :twitter_handle, :facebook_url, :instagram_url, :linkedin_url, :youtube_url, :source_url, :voting_record_url, :claimed_expenses, :constituency_id, :party_id, :snapchat_url, :phone_1, :phone_2
 
   controller do
     def find_resource
@@ -26,6 +26,9 @@ ActiveAdmin.register Candidate do
       f.input :instagram_url, as: :string
       f.input :linkedin_url, as: :string
       f.input :youtube_url, as: :string
+      f.input :snapchat_url, as: :string
+      f.input :phone_1, as: :string
+      f.input :phone_2, as: :string
       f.input :source_url, as: :string
       f.input :voting_record_url, as: :string
       f.input :claimed_expenses, step: 'any'
@@ -57,6 +60,9 @@ ActiveAdmin.register Candidate do
       row :instagram_url
       row :linkedin_url
       row :youtube_url
+      row :snapchat_url
+      row :phone_1
+      row :phone_2
       row :source_url
       row :voting_record_url
       row :claimed_expenses
@@ -69,7 +75,7 @@ ActiveAdmin.register Candidate do
     column "Image" do |c|
       link_to image_tag(profile_pic(c), height: 24, width: 24), profile_pic(c), target: '_blank'
     end
-    
+
     column :id
     column :first_name
     column :last_name
