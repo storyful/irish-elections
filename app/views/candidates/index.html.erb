@@ -14,6 +14,9 @@
           </div>
           <div class="candidate-info">
             <h5><%= candidate.first_name %> <%= candidate.last_name %></h5>
+            <% if candidate.party.try(:name) %>
+              <p><%= candidate.party.name %></p>
+            <% end %>
             <p><%= candidate.constituency.try(:name) %></p>
           </div>
         </a>

@@ -9,7 +9,14 @@
 }
 .candidate-info {
   float: left;
+  h5 {
+    margin-bottom: 9px;
+  }
+  p {
+    margin: 0px;
+  }
 }
+
 .single-candidate {
 
   border-bottom: 1px solid $grey-light;
@@ -47,6 +54,7 @@
   }
 }
 .candidate-card {
+  height: 74px;
   margin-top: 5px;
   margin-bottom: 5px;
   .candidate-pic {
