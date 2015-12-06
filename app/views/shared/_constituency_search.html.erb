@@ -1,0 +1,5 @@
+<%= form_tag candidates_path, :method => 'get', enforce_utf8: false, class: 'constituency-search' do %>
+  <p>
+    <%= select_tag "constituency_id", options_from_collection_for_select(@constituencies, "id", "name"), { :prompt => '--Select a Constituency--' } %>
+  </p>
+<% end %>
