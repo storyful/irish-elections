@@ -39,7 +39,12 @@
     }
   }
 
+  .constituency-search select {
+    width: calc(80% - 22px);
+    font-size: 22px;
+  }
+
   .download-csv {
-    margin-top: 45px;
+    margin-top: 20px;
   }
 }

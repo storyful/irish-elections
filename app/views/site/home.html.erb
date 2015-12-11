@@ -6,6 +6,8 @@
       <a href="/about">Read more</a>
       <h4 class="search-text">Search by name or constituency</h4>
       <%= render 'shared/search' %>
+      <span>or</span>
+      <%= render 'shared/constituency_search' %>
       <h4 class="download-csv"><i class="fa fa-download"></i> <%= link_to 'Download Full CSV', candidates_url(format: :csv) %></h4>
     </div>
     <div class="col-md-6">
