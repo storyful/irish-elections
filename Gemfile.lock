@@ -85,7 +85,7 @@ GEM
     capistrano-bundler (1.1.4)
       capistrano (~> 3.1)
       sshkit (~> 1.2)
-    capistrano-passenger (0.1.1)
+    capistrano-passenger (0.2.0)
       capistrano (~> 3.0)
     capistrano-rails (1.1.5)
       capistrano (~> 3.1)
@@ -101,7 +101,6 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.9.1.1)
-    colorize (0.7.7)
     debug_inspector (0.0.2)
     devise (3.5.2)
       bcrypt (~> 3.0)
@@ -328,8 +327,7 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (>= 2.8, < 4.0)
-    sshkit (1.7.1)
-      colorize (>= 0.7.0)
+    sshkit (1.8.1)
       net-scp (>= 1.1.2)
       net-ssh (>= 2.8.0)
     thor (0.19.1)
