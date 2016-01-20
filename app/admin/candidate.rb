@@ -1,5 +1,5 @@
 ActiveAdmin.register Candidate do
-  permit_params :first_name, :last_name, :aka, :date_of_birth, :gender, :photo_url, :party_profile_url, :website_url, :twitter_handle, :facebook_url, :instagram_url, :linkedin_url, :youtube_url, :source_url, :voting_record_url, :claimed_expenses, :constituency_id, :party_id, :snapchat_url, :phone_1, :phone_2
+  permit_params :first_name, :last_name, :aka, :date_of_birth, :gender, :photo_url, :party_profile_url, :website_url, :twitter_handle, :facebook_url, :instagram_url, :linkedin_url, :youtube_url, :source_url, :voting_record_url, :claimed_expenses, :constituency_id, :party_id, :snapchat_url, :phone_1, :phone_2, :current_td, :current_councillor, :current_senator, :email
 
   controller do
     def find_resource
@@ -20,6 +20,7 @@ ActiveAdmin.register Candidate do
       f.input :gender, label: 'Gender', as: :select, collection: ['Male', 'Female', 'Other']
       f.input :photo_url, as: :string
       f.input :party_profile_url, as: :string
+      f.input :email, as: :string
       f.input :website_url, as: :string
       f.input :twitter_handle, as: :string
       f.input :facebook_url, as: :string
@@ -54,6 +55,7 @@ ActiveAdmin.register Candidate do
       row :gender
       row :photo_url
       row :party_profile_url
+      row :email
       row :website_url
       row :twitter_handle
       row :facebook_url
@@ -68,6 +70,9 @@ ActiveAdmin.register Candidate do
       row :claimed_expenses
       row :constituency
       row :party
+      row :current_td
+      row :current_councillor
+      row :current_senator
     end
   end
 
