@@ -11,7 +11,7 @@ class CandidatesController < ApplicationController
       format.json { render_for_api :default, json: @candidates }
       format.xml { render_for_api :default, xml: @candidates }
       format.csv do
-        headers['Content-Disposition'] = "attachment; filename=\"candidates-list\""
+        headers['Content-Disposition'] = "attachment; filename=\"candidates-list.csv\""
         headers['Content-Type'] ||= 'text/csv'
       end
     end
