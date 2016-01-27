@@ -55,14 +55,6 @@ class Candidate < ActiveRecord::Base
     "https://twitter.com/#{twitter_handle}" unless twitter_handle.blank?
   end
 
-  # def party_name
-  #   party.try(:name)
-  # end
-  #
-  # def constituency_name
-  #   constituency.try(:name)
-  # end
-
   def slug_candidates
     [
       [:first_name, :last_name],
@@ -94,7 +86,7 @@ class Candidate < ActiveRecord::Base
   end
 
   def party_name
-    party.try(:party)
+    party.try(:name)
   end
 
   private
