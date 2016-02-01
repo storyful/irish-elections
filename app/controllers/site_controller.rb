@@ -1,6 +1,6 @@
 class SiteController < ApplicationController
   def home
-    @constituencies = Constituency.all
+    @constituencies = Constituency.order('name ASC')
   end
 
   def about
