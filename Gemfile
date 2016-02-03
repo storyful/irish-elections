@@ -30,6 +30,9 @@ gem 'acts_as_api'
 # Use phony_rails to format phone numbers
 gem 'phony_rails'
 
+# Use rack-cors gem to manage cors
+gem 'rack-cors', :require => 'rack/cors'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
