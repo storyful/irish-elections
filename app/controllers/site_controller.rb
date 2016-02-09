@@ -1,10 +1,10 @@
 class SiteController < ApplicationController
   def home
-    @constituencies = Constituency.order(:name).all
+    @constituencies = Constituency.order('name ASC')
   end
 
   def about
-    @pagetitle = "About"
+    @pagetitle = 'About'
   end
 
   def candidates_csv
@@ -12,7 +12,7 @@ class SiteController < ApplicationController
     respond_to do |format|
       format.html
       format.csv do
-        headers['Content-Disposition'] = "attachment; filename=\"candidates-list\""
+        headers['Content-Disposition'] = 'attachment; filename=\"candidates-list\"'
         headers['Content-Type'] ||= 'text/csv'
       end
     end
