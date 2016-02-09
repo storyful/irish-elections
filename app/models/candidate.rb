@@ -11,6 +11,7 @@ class Candidate < ActiveRecord::Base
   api_accessible :default do |template|
     template.add :first_name
     template.add :last_name
+    template.add :email
     template.add :aka
     template.add :date_of_birth
     template.add :gender
