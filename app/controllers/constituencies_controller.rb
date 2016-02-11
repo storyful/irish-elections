@@ -5,7 +5,7 @@ class ConstituenciesController < ApplicationController
       if params[:party_id].present?
         @constituencies = Party.friendly.find(params[:party_id]).constituencies
       else
-        @constituencies = Constituency.all
+        @constituencies = Constituency.order(:name).all
       end
       format.html
       format.json { render_for_api :default, json: @constituencies }
